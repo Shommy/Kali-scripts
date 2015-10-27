@@ -52,6 +52,26 @@ cd /opt/Empire/setup
 git clone https://github.com/drwetter/testssl.sh.git /opt/testssl.sh
 ln -s /opt/testssl.sh/testssl.sh /usr/bin/testssl.sh
 
+# Responder:
+
+git clone https://github.com/SpiderLabs/Responder.git /opt/Responder
+rm /usr/bin/responder
+ln -s /opt/Responder/Responder.py /usr/bin/responder
+
+# Discover:
+
+git clone https://github.com/leebaird/discover.git /opt/Discover
+cd /opt/Discover
+./update.sh
+ln -s /opt/Discover/discover.sh /usr/bin/discover
+
+# Backdoor Factory:
+
+git clone https://github.com/secretsquirrel/the-backdoor-factory /opt/the-backdoor-factory
+cd /opt/the-backdoor-factory
+./install.sh
+
+
 # CMSmap:
 
 git clone https://github.com/Dionach/CMSmap.git /opt/CMSmap
@@ -63,6 +83,10 @@ git clone https://github.com/tcstool/NoSQLMap.git /opt/NoSQLMap
 cd /opt/NoSQLMap/
 python setup.py install
 ln -s /opt/NoSQLMap/nosqlmap.py /usr/bin/nosqlmap
+
+# nishang
+
+git clone https://github.com/samratashok/nishang /opt/nishang
 
 
 
