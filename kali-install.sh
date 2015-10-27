@@ -9,6 +9,10 @@
 apt-get update
 apt-get upgrade -y
 
+# useful tools from repos:
+
+apt-get install gcc g++ make python3 htop vpnc openconnect gimp filezilla gedit ipcalc samba tor ghex terminator curl build-essential linux-headers-amd64 rar unrar p7zip p7zip-full zip unzip ssh zsh
+
 # msf:
 
 update-rc.d postgresql enable
@@ -60,10 +64,6 @@ cd /opt/NoSQLMap/
 python setup.py install
 ln -s /opt/NoSQLMap/nosqlmap.py /usr/bin/nosqlmap
 
-
-# useful tools from repos:
-
-apt-get install gcc g++ make python3 htop vpnc openconnect gimp filezilla gedit ipcalc samba tor ghex terminator curl build-essential linux-headers-amd64 rar unrar p7zip p7zip-full zip unzip
 
 
 # TODO: gnome screenshot shortcut and other gnome tweaks, vmware tools, terminal and text editor preferences, ...

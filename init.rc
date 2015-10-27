@@ -1,4 +1,3 @@
-db_rebuild_cache
 setg PromptTimeFormat "%D %I:%H:%S"
 setg Prompt "%cya%T%clr %whi%L%clr %grnS:%clr%red%S%clr %grnJ:%clr%red%J%clr msf"
 save
