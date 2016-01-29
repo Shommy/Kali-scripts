@@ -121,6 +121,15 @@ mv ApacheDirectoryStudio /opt/
 rm $ads_file_name
 ln -s /opt/ApacheDirectoryStudio/ApacheDirectoryStudio /usr/bin/ApacheDirectoryStudio
 
+# Sysinternals (windows) --> some (most) tools have issues running on wine
+
+wget https://download.sysinternals.com/files/sysinternalssuite.zip
+mkdir /opt/sysinternals/
+mv sysinternalssuite.zip /opt/sysinternals/
+cd /opt/sysinternals/
+unzip /opt/sysinternals/sysinternalssuite.zip
+rm /opt/sysinternals/sysinternalssuite.zip
+
 
 
 # TODO: gnome screenshot shortcut and other gnome tweaks, vmware tools, terminal and text editor preferences, ...
