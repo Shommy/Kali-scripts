@@ -51,6 +51,10 @@ ln -s /opt/Veil-Evasion/Veil-Evasion.py /usr/bin/veil-evasion
 
 # empire:
 
+# fix pip issues:
+apt-get remove python-pip
+easy_install pip
+
 git clone https://github.com/PowerShellEmpire/Empire.git /opt/Empire
 cd /opt/Empire/setup
 /opt/Empire/setup/install.sh
