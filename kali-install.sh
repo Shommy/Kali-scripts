@@ -23,13 +23,21 @@ echo
 apt-get update
 apt-get upgrade -y
 
+# vmware tools:
+
+echo
+echo "Installing vmware tools"
+echo 
+
+apt-get install open-vm-tools-desktop fuse
+
 # useful tools from repos:
 
 echo 
 echo "Installing some useful tools from the Kali repos"
 echo
 
-apt-get install gcc g++ make python3 htop vpnc openconnect gimp filezilla gedit ipcalc samba tor ghex terminator curl build-essential linux-headers-$arch rar unrar p7zip p7zip-full zip unzip ssh zsh
+apt-get install gcc g++ make python3 htop vpnc openconnect gimp filezilla gedit ipcalc samba tor ghex terminator curl build-essential rar unrar p7zip p7zip-full zip unzip ssh zsh
 
 # msf:
 
@@ -60,12 +68,20 @@ download_link=$(curl -i -X GET $downloads_page 2>/dev/null | grep -E 'linux-'$ja
 ver_major=$(echo $download_link | cut -d"/" -f7 | cut -d"u" -f1)
 ver_minor=$(echo $download_link | cut -d"/" -f7 | cut -d"u" -f2 | cut -d"-" -f1)
 
+echo
+echo "Downloading JDK installation from the Oracle site"
+echo
+
 curl -L -O -H "Cookie: oraclelicense=accept-securebackup-cookie" -k $download_link
 
 tar xvzf jdk-$ver_major'u'$ver_minor-linux-$java_arch.tar.gz
 rm jdk-$ver_major'u'$ver_minor-linux-$java_arch.tar.gz
 mv jdk1.$ver_major.0_$ver_minor /opt/
 cd /opt/jdk1.$ver_major.0_$ver_minor
+
+echo
+echo "Setting up the java paths"
+echo
 
 update-alternatives --install /usr/bin/java java /opt/jdk1.$ver_major.0_$ver_minor/bin/java 1
 update-alternatives --install /usr/bin/javac javac /opt/jdk1.$ver_major.0_$ver_minor/bin/javac 1
@@ -168,6 +184,14 @@ echo
 
 git clone https://github.com/samratashok/nishang /opt/nishang
 
+# PowerSploit
+
+echo 
+echo "Installing PowerSploit"
+echo
+
+git clone https://github.com/PowerShellMafia/PowerSploit.git /opt/PowerSploit
+
 
 # ApacheDirectoryStudio - LDAP browser
 
@@ -191,5 +215,5 @@ ln -s /opt/ApacheDirectoryStudio/ApacheDirectoryStudio /usr/bin/ApacheDirectoryS
 
 
 
-# TODO: gnome screenshot shortcut and other gnome tweaks, vmware tools, terminal and text editor preferences, ...
+# TODO: gnome screenshot shortcut and other gnome tweaks, terminal and text editor preferences, ...
 
